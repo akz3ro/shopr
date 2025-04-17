@@ -6,13 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const OrderPage = async () => {
-  const { userId, redirectToSignIn } = await auth();
-
-  if (!userId) {
-    return redirectToSignIn({
-      returnBackUrl: "/signin",
-    });
-  }
+  const { userId } = await auth();
 
   const orders = await getOrders(userId!);
   return (

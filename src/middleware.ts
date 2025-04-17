@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 const adminRoutes = ["/studio/:path*"];
 const isAdminRoute = createRouteMatcher(adminRoutes);
 
+const protectedRoutes = ["/orders"];
+const isProtectedRoute = createRouteMatcher(protectedRoutes);
+
 export default clerkMiddleware(async (auth, req) => {
   if (isAdminRoute(req)) {
     const { sessionClaims, userId } = await auth();
@@ -14,6 +17,10 @@ export default clerkMiddleware(async (auth, req) => {
     ) {
       return notFound();
     }
+  }
+
+  if (isProtectedRoute(req)) {
+    await auth.protect();
   }
 });
 
