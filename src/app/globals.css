@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@plugin "tailwindcss-debug-screens";
+/* @plugin "tailwindcss-debug-screens"; */
 @plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
