@@ -3,8 +3,9 @@ import SaleBanner from "@/components/SaleBanner";
 import { getAllCategories } from "@/sanity/lib/products/getAllCategories";
 import { getAllProducts } from "@/sanity/lib/products/getAllProducts";
 
-export const dynamic = "force-static";
-export const revalidate = 10800;
+// export const dynamic = "force-static";
+// export const revalidate = 3,600;
+
 export default async function Home() {
   const [productsRes, categoriesRes] = await Promise.allSettled([
     getAllProducts(),
