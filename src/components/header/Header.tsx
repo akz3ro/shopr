@@ -72,8 +72,8 @@ const Header = () => {
               >
                 <Link href="/orders">
                   <PackageIcon className="!w-6 !h-6" />
+                  <span>My Orders</span>
                 </Link>
-                <span>My Orders</span>
               </Button>
               <div className="flex items-center space-x-2">
                 <UserButton />
