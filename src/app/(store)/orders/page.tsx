@@ -10,7 +10,7 @@ const OrderPage = async () => {
 
   if (!userId) {
     return redirectToSignIn({
-      returnBackUrl: "/signIn",
+      returnBackUrl: "/signin",
     });
   }
 
